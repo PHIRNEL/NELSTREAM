@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEL_STREAM, découvrez films et séries et trouvez où les regarder officiellement.">
+  <title>NEL_STREAM | Films et séries</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#">NEL<span>_</span>STREAM</a>
+  <nav><a href="#accueil">Accueil</a><a href="#catalogue">Séries</a><a href="#films">Films</a></nav>
+  <div class="tools">
+    <input id="search" type="search" placeholder="Rechercher un film ou une série...">
+    <select id="region" title="Pays de disponibilité">
+      <option value="CG">Congo (CG)</option><option value="FR">France (FR)</option>
+      <option value="US">États-Unis (US)</option><option value="GB">Royaume-Uni (GB)</option>
+    </select>
+  </div>
+</header>
+<main>
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <span class="eyebrow">DÉCOUVREZ VOTRE PROCHAIN PROGRAMME</span>
+      <h1>Le cinéma et les séries<br><em>à portée de clic.</em></h1>
+      <p>Explorez les nouveautés, découvrez les saisons et trouvez les plateformes officielles qui proposent vos programmes.</p>
+      <a class="primary" href="#catalogue">Explorer le catalogue</a>
+    </div>
+  </section>
+  <section class="section" id="catalogue">
+    <div class="section-title"><div><span class="eyebrow">CATALOGUE TMDB</span><h2>Séries populaires</h2></div><button id="reloadShows">Actualiser</button></div>
+    <div class="grid" id="showsGrid"><p class="status">Chargement des séries...</p></div>
+  </section>
+  <section class="section" id="films">
+    <div class="section-title"><div><span class="eyebrow">À DÉCOUVRIR</span><h2>Films populaires</h2></div></div>
+    <div class="grid" id="moviesGrid"><p class="status">Chargement des films...</p></div>
+  </section>
+</main>
+<footer>
+  <a class="brand" href="#">NEL<span>_</span>STREAM</a>
+  <p>Les informations de catalogue sont fournies par TMDB. Les disponibilités de streaming sont fournies par JustWatch via TMDB.</p>
+  <p class="legal">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+  <p class="legal">NEL_STREAM ne diffuse pas les vidéos des plateformes tierces. Les boutons de visionnage ouvrent les services officiels lorsqu'un lien est disponible.</p>
+</footer>
+
+<div class="modal hidden" id="detailsModal" aria-modal="true" role="dialog">
+  <div class="backdrop" data-close></div>
+  <div class="dialog">
+    <button class="close" data-close aria-label="Fermer">×</button>
+    <div class="detail-head" id="detailHead"></div>
+    <div class="detail-content">
+      <div class="detail-meta" id="detailMeta"></div>
+      <h2 id="detailTitle"></h2>
+      <p id="detailOverview"></p>
+      <div class="block">
+        <h3>Saisons et épisodes</h3>
+        <select id="seasonSelect"></select>
+        <div id="episodes" class="episodes"></div>
+      </div>
+      <div class="block">
+        <h3>Où regarder officiellement ?</h3>
+        <div id="providers"><p class="status">Recherche des disponibilités...</p></div>
+      </div>
+      <div class="block">
+        <h3>Bande-annonce officielle</h3>
+        <div id="trailer" class="trailer"><p class="status">Recherche de la bande-annonce...</p></div>
+      </div>
+      <p class="small-note">Les offres dépendent du pays, de l'abonnement et des droits de diffusion. La disponibilité peut changer.</p>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
